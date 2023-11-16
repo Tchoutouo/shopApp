@@ -1,0 +1,36 @@
+header{
+  background-color: forestgreen;
+  height: 80px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+header .nav-bar ul{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+
+}
+
+header a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+
+}
+
+@media screen and (max-width: 900px) {
+  header .nav-bar ul{
+    display: none;
+  }
+  header{
+    justify-content: center;
+  }
+}

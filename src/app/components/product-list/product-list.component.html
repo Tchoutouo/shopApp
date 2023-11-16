@@ -1,0 +1,15 @@
+
+<div class="product-list">
+  <app-product-item
+    *ngFor="let product of products"
+    [product] = "product"
+    (deleteProductItem)="handleDeleteProduct($event)">
+  </app-product-item>
+
+  <div class="bar" *ngIf="!products.length">
+    Désolé, aucun article n'est dispponible pour le moment.
+  </div>
+
+  <app-modal-product-view></app-modal-product-view>
+  
+</div>
