@@ -12,6 +12,9 @@ export class ProductItemComponent implements OnInit {
 
   @Output() deleteProductItem : EventEmitter<Product> =  new EventEmitter<Product>()
 
+  @Output() displayProductViewModal : EventEmitter<Product> =  new EventEmitter<Product>()
+
+
   ngOnInit(): void {
     // console.log("----------------- PRODUCT ITEM--------------------")
     // console.log(this.product);
@@ -19,11 +22,12 @@ export class ProductItemComponent implements OnInit {
 
   //Afficher le produit au clic
   handleClickProduct(product: Product | undefined){
-    console.log(product)
+    // console.log(product)
+    this.displayProductViewModal.emit(product)
   }
 
   deleteProduct(product: Product | undefined){
     // console.log(product)
-    this.deleteProductItem.emit(product)
+    // this.deleteProductItem.emit(product)
   }
 }

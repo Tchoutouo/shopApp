@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 .product-item .product-image img{
-  width: 400px;
+  width: 100%;
   height: 400px;
 }
 
@@ -19,4 +19,10 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .product-item{
+    width: 100%;
+  }
 }

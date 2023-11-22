@@ -1,6 +1,6 @@
 .modal-product-view-container{
   height: 400px;
-  width: 600px;
+  width: 650px;
   background-color: white;
   position: fixed;
   z-index: 888;
@@ -9,7 +9,7 @@
   transform: translate(-50%, -50%)
 }
 
-.overlay{
+.overlay {
   position: fixed;
   z-index: 99;
   width: 100%;
@@ -18,4 +18,19 @@
   left: 0;
   opacity: 0.8;
   background-color: #1d1d1d;
+}
+
+.modal-product-view-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-product-view-details{
+  text-align: center;
+}
+
+@media screen and (max-width: 660px) {
+  .modal-product-view-container{
+    width: 95%;
+  }
 }
