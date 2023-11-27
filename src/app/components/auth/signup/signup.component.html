@@ -1,0 +1,65 @@
+<!-- <div class="signup signin">
+  <div class="form-inline firstname">
+    <input
+    type="text"
+    name="firstname"
+    placeholder="your name..."
+    [(ngModel)]="firstname"
+    />
+    <button class="btn"  (click)="handleSave()">Save</button>
+  </div>
+
+  <div class="names">
+    <ul>
+      <li class="flex aic" *ngFor="let name of names; let index = index">{{name}}
+        <div class="name-action flex gap-5">
+          <button class="btn" (click)="handleUpdate(index)">Update</button>
+          <button class="btn" (click)="handleDelete(index)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="signup">
+  <div class="form-container">
+    <form action="">
+      <h2>Inscription</h2>
+      <div class="form-line flex gap-10 wrap">
+        <input class="flex-1"
+        type="text" name="firstname" placeholder="your firstname ..." id=""
+        [(ngModel)]="user.firstname"
+        >
+        <input class="flex-1"
+        type="text" name="lastname" placeholder="your lastname ..." id=""
+        [(ngModel)]="user.lastname"
+        >
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1"
+        type="email" name="email" placeholder="your email please ..." id=""
+        [(ngModel)]="user.email"
+        >
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1"
+        type="password" name="password" placeholder="your password please ..." id=""
+        [(ngModel)]="user.password"
+        >
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1"
+        type="password" name="passwordConfirm" placeholder="Confirm your password please ..." id=""
+        [(ngModel)]="user.passwordConfirm"
+        >
+      </div>
+      <div class="button flex">
+        <button class="btn flex-1" (click)="handleSubmit()">S'inscrire</button>
+      </div>
+      <!-- <p>
+        {{user | json}}
+      </p> -->
+    </form>
+  </div>
+</div>
+

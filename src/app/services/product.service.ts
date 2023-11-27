@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { Observable, interval, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class ProductService {
 
   private products: Product[] = []
 
-  private urlApi: string = "http://localhost:4200/assets/api/products.json"
+  private urlApi: string = environment.serverUrl
 
   constructor(private http: HttpClient) { }
 
