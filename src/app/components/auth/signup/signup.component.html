@@ -23,38 +23,71 @@
 
 <div class="signup">
   <div class="form-container">
-    <form action="">
+    <form action="" [formGroup]="signupForm">
       <h2>Inscription</h2>
       <div class="form-line flex gap-10 wrap">
         <input class="flex-1"
-        type="text" name="firstname" placeholder="your firstname ..." id=""
-        [(ngModel)]="user.firstname"
+        type="text" name="firstname" [formControl]="firstname" placeholder="your firstname ..." id=""
         >
         <input class="flex-1"
-        type="text" name="lastname" placeholder="your lastname ..." id=""
-        [(ngModel)]="user.lastname"
+        type="text" name="lastname" [formControl]="lastname" placeholder="your lastname ..." id=""
         >
+      </div>
+      <!-- <div class="form-line"> -->
+        <div class="error" *ngIf="lastname.dirty">
+          <p *ngIf="lastname.hasError('required')">
+            le firstname est requis
+          </p>
+        </div>
+        <div class="error" *ngIf="lastname.dirty">
+          <p *ngIf="lastname.hasError('required')">
+            le lastname est requis
+          </p>
+        </div>
+      <!-- </div> -->
+      <div class="form-line flex">
+        <input class="flex-1"
+        type="email" name="email" [formControl]="email" placeholder="your email please ..." id=""
+        >
+      </div>
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <p *ngIf="email.hasError('required')">
+          L'email est requis
+        </p>
+        <p *ngIf="!email.hasError('required')">
+          L'email ne respect pas le bon format
+        </p>
       </div>
       <div class="form-line flex">
         <input class="flex-1"
-        type="email" name="email" placeholder="your email please ..." id=""
-        [(ngModel)]="user.email"
+        type="password" name="password" [formControl]="password" placeholder="your password please ..." id=""
         >
+      </div>
+      <div class="error" *ngIf="password.dirty && !password.valid">
+        <p *ngIf="password.hasError('required')">
+          The password is required
+        </p>
+        
+        <p *ngIf="password.hasError('minlength')">
+          The password must be at least 6 characters
+        </p>
       </div>
       <div class="form-line flex">
         <input class="flex-1"
-        type="password" name="password" placeholder="your password please ..." id=""
-        [(ngModel)]="user.password"
+        type="password" name="passwordConfirm" [formControl]="passwordConfirm" placeholder="Confirm your password please ..." id=""
         >
       </div>
-      <div class="form-line flex">
-        <input class="flex-1"
-        type="password" name="passwordConfirm" placeholder="Confirm your password please ..." id=""
-        [(ngModel)]="user.passwordConfirm"
-        >
+      <div class="error" *ngIf="passwordConfirm.dirty && !passwordConfirm.valid">
+        <p *ngIf="passwordConfirm.hasError('required')">
+          The password is required
+        </p>
+        
+        <p *ngIf="passwordConfirm.hasError('minlength')">
+          The password must be at least 6 characters
+        </p>
       </div>
       <div class="button flex">
-        <button class="btn flex-1" (click)="handleSubmit()">S'inscrire</button>
+        <button class="btn flex-1"  [disabled]="!this.signupForm.valid" (click)="handleSubmit()">S'inscrire</button>
       </div>
       <!-- <p>
         {{user | json}}

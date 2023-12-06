@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -16,12 +17,36 @@ export class SignupComponent implements OnInit{
       passwordConfirm:""
     }
 
-  constructor(){}
+  signupForm: FormGroup;
+  firstname: FormControl;
+  lastname: FormControl;
+  email: FormControl;
+  password: FormControl;
+  passwordConfirm: FormControl;
+
+
+  constructor(fb: FormBuilder){
+    this.firstname = fb.control("",[Validators.required]);
+    this.lastname = fb.control("",[Validators.required]);
+    this.email = fb.control("",[Validators.email, Validators.required]);
+    this.password = fb.control("",[Validators.required, Validators.minLength(8)]);
+    this.passwordConfirm = fb.control("",[Validators.required, Validators.minLength(8)]);
+    
+    this.signupForm = fb.group({
+      firstname: this.firstname,
+      lastname: this.lastname,
+      email: this.email,
+      password: this.password,
+      passwordConfirm: this.passwordConfirm,
+
+    })
+  }
+
   ngOnInit(): void {
   }
 
   handleSubmit(){
-    console.log("user: ",this.user)
+    console.log(this.signupForm.value)
   }
   // firstname: string = ""
   // names: string[] = ['yvan']
