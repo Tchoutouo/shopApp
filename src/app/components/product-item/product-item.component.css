@@ -11,13 +11,13 @@ a{
 .product-item{
   text-align: center;
   border: 0.1px solid #ccc;
-  width: 400px;
+  width: 250px;
   height: 540px;
   cursor: pointer;
 }
 .product-item .product-image img{
   width: 100%;
-  height: 400px;
+  height: 250px;
 }
 
 .product-item .product-details .product-price{

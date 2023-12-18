@@ -1,13 +1,17 @@
 
 <div class="product-list">
-  <app-product-item
-    *ngFor="let product of products"
-    [product] = "product"
-    (deleteProductItem)="handleDeleteProduct($event)"
-    (displayProductViewModal)="handleDisplayProductViewModal($event)">
-  </app-product-item>
+  <app-loading *ngIf="isLoading"></app-loading>
 
-  <div class="bar" *ngIf="!products.length">
+  <!-- <div *ngIf="!isLoading && products.length"> -->
+    <app-product-item
+      *ngFor="let product of products"
+      [product] = "product"
+      (deleteProductItem)="handleDeleteProduct($event)"
+      (displayProductViewModal)="handleDisplayProductViewModal($event)">
+    </app-product-item>
+  <!-- </div> -->
+  
+  <div class="bar" *ngIf="!isLoading && !products.length">
     Désolé, aucun article n'est dispponible pour le moment.
   </div>
 

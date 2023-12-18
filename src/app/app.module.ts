@@ -15,6 +15,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from 'app.routing';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ROUTES } from 'app.routing';
     ProductItemComponent,
     ModalProductViewComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

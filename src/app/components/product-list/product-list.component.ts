@@ -19,6 +19,8 @@ export class ProductListComponent implements OnInit, OnDestroy{
 
   productsSub: Subscription | undefined
 
+  isLoading: boolean = true
+
   constructor(private productService: ProductService){
 
   }
@@ -33,9 +35,11 @@ export class ProductListComponent implements OnInit, OnDestroy{
     .subscribe({
       next: (products: Product[])=>{
         this.products = products
+        this.isLoading = false
       },
       error: (error: any)=>{
         console.log("error", error)
+        this.isLoading = true
       },
       complete: ()=>{
         console.log("complete")

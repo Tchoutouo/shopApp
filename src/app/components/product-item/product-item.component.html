@@ -1,5 +1,4 @@
-<a [routerLink]="['product', product?.slug]">
-  <div class="product-item" (click)="handleClickProduct(product)">
+  <div class="product-item">
     <div class="product-image">
       <img [src]=" product? product.imageUrl[0] : '' " [alt]="product?.name">
     </div>
@@ -13,9 +12,13 @@
           <h3>{{ (product?.regular_price || 0) / 100 }}</h3>
         </del>
       </div>
-
+      <div class="product-action-button flex gap-5 jcc">
+        <button class="btn" (click)="handleClickProduct(product)">Quick view</button>
+        <button class="btn" [routerLink]="['product', product?.slug]">
+          All details
+        </button>
+      </div>   
     </div>
   </div>
-</a>
 
 
