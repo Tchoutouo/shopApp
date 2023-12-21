@@ -1,6 +1,6 @@
   <div class="product-item">
     <div class="product-image">
-      <img [src]=" product? product.imageUrl[0] : '' " [alt]="product?.name">
+      <img [src]=" product? product.imageUrl[0] : '' " [alt]="product?.name" [routerLink]="['product', product?.slug]">
     </div>
     <div class="product-details">
       <div class="product-name">
@@ -14,9 +14,6 @@
       </div>
       <div class="product-action-button flex gap-5 jcc">
         <button class="btn" (click)="handleClickProduct(product)">Quick view</button>
-        <button class="btn" [routerLink]="['product', product?.slug]">
-          All details
-        </button>
       </div>   
     </div>
   </div>
