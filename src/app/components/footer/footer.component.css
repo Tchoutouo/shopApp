@@ -26,7 +26,8 @@ footer .content{
 }
 
 .footer-widget{
-  min-width: 200px;
+  min-width: 160px;
+  padding: 20px 0;
 }
 .footer-list{
   list-style: none;

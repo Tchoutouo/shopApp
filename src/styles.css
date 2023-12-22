@@ -26,6 +26,14 @@ body{
   flex: 2;
 }
 
+.flex-3{
+  flex: 3;
+}
+
+.flex-4{
+  flex: 4;
+}
+
 .wrap{
   flex-wrap: wrap;
 }
@@ -51,7 +59,7 @@ body{
 }
 
 .content{
-  width: 80%;
+  width: 70%;
   margin:0 auto;
   min-height: 70vh;
 }
@@ -67,8 +75,23 @@ body{
     width: 95%;
   }
 }
- 
 
+button:disabled{
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.tc{
+  text-align: center;
+}
+
+.error{
+  color: red;
+}
+
+form p {
+  margin: 0;
+}
 /* ************************* SIGNIN SIGNUP *****************************/
 .signup{
   height: 70vh;
@@ -95,11 +118,16 @@ body{
   left: 50%;
   transform: translate(-50%,-50%);
   border: 0.1px solid #ccc;
+  box-shadow: 0 3px 5px -1px #003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
 }
 
 form{
   padding: 5px;
   background-color: white;
+}
+
+form h2{
+  text-align: center;
 }
 
 form .form-line{
@@ -113,6 +141,9 @@ form .form-line input{
 
 }
 
+form .btn{
+  height: 45px;
+}
 @media screen and (max-width: 550px){
   .form-container{
     width: 90%;

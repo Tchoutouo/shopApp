@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductComponent implements OnInit, OnDestroy{
 
   slug: string | undefined
+  currentImage: string | undefined
   product: Product | undefined
   productSub: Subscription | undefined
   isLoading: boolean = true
@@ -26,6 +27,7 @@ export class ProductComponent implements OnInit, OnDestroy{
     .subscribe({
       next: (products: Product[])=>{
         this.product = products.filter(p => p.slug === this.slug)[0]
+        this.currentImage = this.product.imageUrl[0]
         this.isLoading = false
       },
       error: (error: any)=>{
@@ -39,5 +41,8 @@ export class ProductComponent implements OnInit, OnDestroy{
     this.productSub?.unsubscribe()
   }
 
+  handleChangeCurrentImage(url: string){
+    this.currentImage = url
+  }
 
 }

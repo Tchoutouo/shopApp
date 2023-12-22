@@ -2,8 +2,19 @@
 <app-loading *ngIf="isLoading"></app-loading>
 
 <div *ngIf="!isLoading" class="single-product flex gap-10 content">
-  <div class="single-product-image flex-1 flex">
-    <img [src]=" product? product.imageUrl[0] : '' " [alt]="product?.name">
+  <div class="single-product-image flex-1 gap-10 flex">
+    <div class="single-product-image-list flex column gap-10 ">
+      <img 
+      *ngFor="let url of product?.imageUrl" 
+      [src]="url" [alt]="product?.name"
+      width="100"
+      (click)="handleChangeCurrentImage(url)"
+      [ngClass] = "{ current: currentImage == url }"
+      >
+    </div>
+    <div class="single-product-image-current flex-3">
+      <img [src]="currentImage" [alt]="product?.name">
+    </div>
   </div>
   <div class="single-product-details flex-1">
     <h2>{{product?.name}}</h2>
@@ -21,3 +32,4 @@
     </div>   
   </div>
 </div>
+ 
