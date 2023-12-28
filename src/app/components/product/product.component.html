@@ -9,6 +9,7 @@
       [src]="url" [alt]="product?.name"
       width="100"
       (click)="handleChangeCurrentImage(url)"
+      (mouseover)="handleChangeCurrentImage(url)"
       [ngClass] = "{ current: currentImage == url }"
       >
     </div>
@@ -18,18 +19,23 @@
   </div>
   <div class="single-product-details flex-1">
     <h2>{{product?.name}}</h2>
-    <div class="single-product-details-price">
+    <div class="single-product-details-price flex aic gap-10">
       <h4>  {{(product?.sold_price || 0) /100 | currency: "USD"}}</h4>
       <del>
         <h4> {{(product?.regular_price || 0) /100 | currency: "USD"}}</h4>
       </del>
+      <h4> {{ product ? (( product.regular_price/100 - product.sold_price/100)/(product.regular_price/100) | percent) : null}}</h4>
     </div>
-    <div class="single-product-details-created-at">
+    <div class="product-action-button flex column">
+      <button class="btn btn-main flex-1">Pay now</button>
+      <button class="btn btn-main flex-1">Add to cart </button>
+      <app-payment-card [fullwidth]="true"></app-payment-card>
+    </div>  
+    <div class="single-product-details-created-at tc">
       Crée le {{product?.created_at | date: "dd/MM/YYYY"}}
     </div>
-    <div class="product-action-button">
-      <button class="btn">Pay now</button>
-    </div>   
   </div>
 </div>
- 
+<app-product-details>
+  
+</app-product-details>
