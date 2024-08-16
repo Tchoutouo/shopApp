@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit{
+  
+  @Input() product: Product | undefined
 
+  ngOnInit(): void {
+  }
+
+  handleChangeDetails(component: any){
+    component.product = this.product
+    console.log({params: component});
+  }
 }

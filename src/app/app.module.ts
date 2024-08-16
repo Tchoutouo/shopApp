@@ -19,7 +19,6 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductDescriptionComponent } from './components/product-tabs/product-description/product-description.component';
-import { ProductDeComponent } from './components/product-tabs/product-de/product-de.component';
 import { ProductAdditionalInfoComponent } from './components/product-tabs/product-additional-info/product-additional-info.component';
 import { ProductVendorComponent } from './components/product-tabs/product-vendor/product-vendor.component';
 import { ProductReviewsComponent } from './components/product-tabs/product-reviews/product-reviews.component';
@@ -40,7 +39,6 @@ import { ProductReviewsComponent } from './components/product-tabs/product-revie
     PaymentCardComponent,
     ProductDetailsComponent,
     ProductDescriptionComponent,
-    ProductDeComponent,
     ProductAdditionalInfoComponent,
     ProductVendorComponent,
     ProductReviewsComponent
